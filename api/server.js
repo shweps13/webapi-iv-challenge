@@ -8,10 +8,11 @@ server.use(express.json());
 
 server.get('/', (req, res) => {
     const nameInsert = req.teamName ? ` ${req.teamName}` : '';
-  
+    const yourData = process.env
     res.send(`
     <h2>Heorhii Hubs API</h2>
-    <p>Welcome ${nameInsert} to the Heorhii Hubs API</p>
+    <p>Hello ${yourData.USER}</p>
+    <p>Welcome ${nameInsert} to the Heorhii Hubs API on port ${yourData.PORT}</p>
     `);
   });
 
